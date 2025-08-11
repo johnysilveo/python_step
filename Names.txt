@@ -1,0 +1,6 @@
+Name is Johny
+Age is 32
+Name is Yulia
+Age is 22
+Name is Baiden
+Age is 98

@@ -1,0 +1,2 @@
+Hello World">>>>> This is added via git <<<<<" 
+"Staging test" 

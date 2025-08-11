@@ -1,7 +1,6 @@
-# Ignore everything in this folder by default
-*
+# Ignore specific folders
+.idea/
+__pycache__/
 
-# Allow these:
-!/.gitignore
-!/*.*        # all top-level files
-
+# Track everything else
+!*
