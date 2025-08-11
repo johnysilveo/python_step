@@ -1,0 +1,7 @@
+# Ignore everything in this folder by default
+*
+
+# Allow these:
+!/.gitignore
+!/*.*        # all top-level files
+
