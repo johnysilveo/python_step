@@ -1,6 +1,8 @@
 # Ignore specific folders
 .idea/
 __pycache__/
+.xml
+.venv/
 
 # Track everything else
 !*
