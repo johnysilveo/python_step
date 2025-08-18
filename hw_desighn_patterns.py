@@ -308,7 +308,6 @@ try:
     mn, mx = save_text(nums, out_path)
     log_manager.log(f"[repo] wrote text to {out_path}")
 
-    # screen output
     print("\n--- OUTPUT ---")
     print("Numbers:", ", ".join(f"{n:g}" for n in nums))
     print(f"Min: {mn:g}")
