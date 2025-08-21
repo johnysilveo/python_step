@@ -1,0 +1,122 @@
+[
+  {
+    "id": "P001",
+    "name": "Nokia N95",
+    "price": 199.99,
+    "description": "Classic slider smartphone with multimedia features",
+    "in_stock": true,
+    "product_qty": 10
+  },
+  {
+    "id": "P002",
+    "name": "Nokia E72",
+    "price": 149.50,
+    "description": "Business series QWERTY phone",
+    "in_stock": true,
+    "product_qty": 15
+  },
+  {
+    "id": "P003",
+    "name": "Nokia N91",
+    "price": 179.00,
+    "description": "Music phone with built-in hard drive",
+    "in_stock": true,
+    "product_qty": 8
+  },
+  {
+    "id": "P004",
+    "name": "Nokia N43",
+    "price": 129.00,
+    "description": "Mid-range model, durable build",
+    "in_stock": true,
+    "product_qty": 12
+  },
+  {
+    "id": "P005",
+    "name": "Nokia 6600",
+    "price": 99.99,
+    "description": "Iconic Symbian smartphone",
+    "in_stock": true,
+    "product_qty": 20
+  },
+  {
+    "id": "P006",
+    "name": "Nokia 7610",
+    "price": 89.99,
+    "description": "Fashion phone with unique design",
+    "in_stock": true,
+    "product_qty": 18
+  },
+  {
+    "id": "P007",
+    "name": "Nokia N73",
+    "price": 139.00,
+    "description": "Multimedia series phone with Carl Zeiss optics",
+    "in_stock": true,
+    "product_qty": 9
+  },
+  {
+    "id": "P008",
+    "name": "Nokia N70",
+    "price": 109.99,
+    "description": "Compact 3G phone",
+    "in_stock": true,
+    "product_qty": 11
+  },
+  {
+    "id": "P009",
+    "name": "Nokia 3650",
+    "price": 79.50,
+    "description": "Symbian phone with circular keypad",
+    "in_stock": true,
+    "product_qty": 14
+  },
+  {
+    "id": "P010",
+    "name": "Nokia 6680",
+    "price": 119.99,
+    "description": "3G smartphone with dual camera",
+    "in_stock": true,
+    "product_qty": 7
+  },
+  {
+    "id": "P011",
+    "name": "Nokia E51",
+    "price": 139.50,
+    "description": "Slim business phone with Wi-Fi",
+    "in_stock": true,
+    "product_qty": 16
+  },
+  {
+    "id": "P012",
+    "name": "Nokia 5800 XpressMusic",
+    "price": 159.99,
+    "description": "Touchscreen music phone",
+    "in_stock": true,
+    "product_qty": 6
+  },
+  {
+    "id": "P013",
+    "name": "Nokia N82",
+    "price": 169.00,
+    "description": "High-end phone with GPS and 5MP camera",
+    "in_stock": true,
+    "product_qty": 13
+  },
+  {
+    "id": "P014",
+    "name": "Nokia N97",
+    "price": 189.00,
+    "description": "Flagship touchscreen with QWERTY slider",
+    "in_stock": true,
+    "product_qty": 5
+  },
+  {
+    "id": "P015",
+    "name": "Nokia E90 Communicator",
+    "price": 249.99,
+    "description": "Professional communicator with large screen and keyboard",
+    "in_stock": true,
+    "product_qty": 4
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "order_id": "ORD001",
+  "customer_id": "CUST01",
+  "created_at": "2025-08-21T13:47:57.938622",
+  "items": [
+    {
+      "product_id": "P001",
+      "name": "Nokia N95",
+      "qty": 2,
+      "unit_price": "199.99",
+      "line_total": "399.98"
+    },
+    {
+      "product_id": "P002",
+      "name": "Nokia E72",
+      "qty": 1,
+      "unit_price": "149.5",
+      "line_total": "149.5"
+    }
+  ],
+  "totals": {
+    "subtotal": "549.48",
+    "discounts_total": "59.448",
+    "after_discounts": "490.032",
+    "tax": "34.30224",
+    "grand_total": "524.33424"
+  },
+  "discount_details": [
+    {
+      "label": "Cupon WELCOME5",
+      "amount": "5"
+    },
+    {
+      "label": "Percent 10 off",
+      "amount": "54.448"
+    }
+  ]
+}

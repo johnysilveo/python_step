@@ -1,0 +1,187 @@
+{
+  "Honolulu": [
+    {
+      "day": 1,
+      "temp_f": 86,
+      "condition": "Sunny"
+    },
+    {
+      "day": 2,
+      "temp_f": 86,
+      "condition": "Sunny"
+    },
+    {
+      "day": 3,
+      "temp_f": 85,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "day": 4,
+      "temp_f": 85,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "day": 5,
+      "temp_f": 84,
+      "condition": "Showers"
+    },
+    {
+      "day": 6,
+      "temp_f": 85,
+      "condition": "Sunny"
+    },
+    {
+      "day": 7,
+      "temp_f": 86,
+      "condition": "Sunny"
+    }
+  ],
+  "San Francisco": [
+    {
+      "day": 1,
+      "temp_f": 66,
+      "condition": "Foggy"
+    },
+    {
+      "day": 2,
+      "temp_f": 65,
+      "condition": "Cloudy"
+    },
+    {
+      "day": 3,
+      "temp_f": 65,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "day": 4,
+      "temp_f": 64,
+      "condition": "Foggy"
+    },
+    {
+      "day": 5,
+      "temp_f": 64,
+      "condition": "Cloudy"
+    },
+    {
+      "day": 6,
+      "temp_f": 65,
+      "condition": "Sunny"
+    },
+    {
+      "day": 7,
+      "temp_f": 66,
+      "condition": "Sunny"
+    }
+  ],
+  "San Diego": [
+    {
+      "day": 1,
+      "temp_f": 76,
+      "condition": "Sunny"
+    },
+    {
+      "day": 2,
+      "temp_f": 75,
+      "condition": "Sunny"
+    },
+    {
+      "day": 3,
+      "temp_f": 75,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "day": 4,
+      "temp_f": 74,
+      "condition": "Sunny"
+    },
+    {
+      "day": 5,
+      "temp_f": 74,
+      "condition": "Sunny"
+    },
+    {
+      "day": 6,
+      "temp_f": 75,
+      "condition": "Sunny"
+    },
+    {
+      "day": 7,
+      "temp_f": 76,
+      "condition": "Sunny"
+    }
+  ],
+  "Los Angeles": [
+    {
+      "day": 1,
+      "temp_f": 84,
+      "condition": "Sunny"
+    },
+    {
+      "day": 2,
+      "temp_f": 84,
+      "condition": "Sunny"
+    },
+    {
+      "day": 3,
+      "temp_f": 83,
+      "condition": "Hazy"
+    },
+    {
+      "day": 4,
+      "temp_f": 83,
+      "condition": "Sunny"
+    },
+    {
+      "day": 5,
+      "temp_f": 82,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "day": 6,
+      "temp_f": 83,
+      "condition": "Sunny"
+    },
+    {
+      "day": 7,
+      "temp_f": 84,
+      "condition": "Sunny"
+    }
+  ],
+  "Dnipro": [
+    {
+      "day": 1,
+      "temp_f": 78,
+      "condition": "Sunny"
+    },
+    {
+      "day": 2,
+      "temp_f": 77,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "day": 3,
+      "temp_f": 76,
+      "condition": "Cloudy"
+    },
+    {
+      "day": 4,
+      "temp_f": 75,
+      "condition": "Light Rain"
+    },
+    {
+      "day": 5,
+      "temp_f": 74,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "day": 6,
+      "temp_f": 74,
+      "condition": "Sunny"
+    },
+    {
+      "day": 7,
+      "temp_f": 75,
+      "condition": "Sunny"
+    }
+  ]
+}
