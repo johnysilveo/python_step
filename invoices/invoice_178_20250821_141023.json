@@ -1,0 +1,27 @@
+{
+  "order_id": "178",
+  "customer_id": "Jhony",
+  "created_at": "2025-08-21T14:10:23.138112",
+  "items": [
+    {
+      "product_id": "P012",
+      "name": "Nokia 5800 XpressMusic",
+      "qty": 6,
+      "unit_price": "159.99",
+      "line_total": "959.94"
+    }
+  ],
+  "totals": {
+    "subtotal": "959.94",
+    "discounts_total": "95.994",
+    "after_discounts": "863.946",
+    "tax": "60.47622",
+    "grand_total": "924.42222"
+  },
+  "discount_details": [
+    {
+      "label": "Percent 10 off",
+      "amount": "95.994"
+    }
+  ]
+}
