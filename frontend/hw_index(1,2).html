@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Romeo and Juliet</title>
+</head>
+<body>
+<ul class="num-list">
+            <li><strong>Apple</strong></li>
+            <li ><strong>Banana</strong></li>
+            <li><strong>Cherry</strong></li>
+            <li><strong>Orange</strong></li>
+            <li><strong>Pear</strong></li>
+</ul>
+<style>
+.num-list{
+    list-style:none;
+    margin:0;
+    padding:16px;
+    counter-reset:item 0;
+    --num-bg: #ef9fb1;
+    --num-color:#fff;
+    }
+.num-list > li{
+    counter-increment:item;
+    padding:8px 12px;
+    margin:6px 0;
+    border-radius:8px;
+    background:indianred;
+    opacity: 0.85;
+background: color-mix(in srgb, var(--num-bg) 60%, #000 25%);}
+.num-list > li::before{
+  content:counter(item) ".";
+  display:inline-block;
+    margin-right:10px;
+    padding:2px 8px;
+    min-width:2.2ch;
+    text-align:right;
+    font-weight:700;
+    background: color-mix(in srgb, var(--num-bg) 45%, #000 50%);
+  color: var(--num-color);
+}
+.num-list > li > strong{
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--num-bg) 45%, #000 50%);
+  color: var(--num-color);
+}
+</style>
+<hr>
+
+<h1 style="text-align:center;">Romeo and Juliet</h1>
+<h4 >ACT 1</h4>
+<h5><b>PROLOGUE</b></h5>
+<pre>
+Two households, both alike in dignity,
+In fair Verona, where we lay our scene,
+From ancient grudge break to new mutiny,
+Where civil blood makes civil hands unclean.
+From forth the fatal loins of these two foes
+A pair of star-cross'd lovers take their life;
+Whose misadventured piteous overthrows
+Do with their death bury their parents' strife.
+The fearful passage of their death-mark'd love,
+And the continuance of their parents' rage,
+Which, but their children's end, nought could remove,
+Is now the two hours' traffic of our stage;
+The which if you with patient ears attend,
+What here shall miss, our toil shall strive to mend.
+</pre>
+
+<h4><strong>SCENE</strong> I. Verona. A public place.</h4>
+<br>
+<i>Enter SAMPSON and GREGORY, of the house of Capulet, armed with swords and bucklers</i>
+<br>
+<h4>SAMPSON</h4>
+<br>
+Gregory, o' my word, we'll not carry coals.
+<br>
+<h4>GREGORY</h4>
+
+<mark>No, for then we should be colliers.</mark>
+<hr>
+
+
+</body>
+</html>
