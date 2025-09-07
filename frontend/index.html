@@ -1,10 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="UTF-8" />
+  <title>vizartstudio</title>
+  <link href="style.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body>
-$END$
+<body id="top">
+
+  <!-- Fixed red accent tag & scroll progress -->
+  <div class="accent-tag" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- HERO: required Lorem Ipsum (centered, preserved) -->
+  <header class="page-header reveal centered">
+    <h1>What is Lorem Ipsum?</h1>
+    <p class="lipsum">
+      Lorem Ipsum is simply <b>dummy</b> text of the printing and typesetting industry.<br>
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+      <strong>unknown</strong> printer took a galley of type and scrambled it to make a type specimen book.<br>
+      It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged.<br>
+      It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently
+      with desktop publishing software like Aldus PageMaker including versions of <i>Lorem Ipsum</i>.
+    </p>
+  </header>
+
+  <!-- INFO CARDS (subtle polish) -->
+  <section class="info-grid reveal centered">
+    <article class="info-card">
+      <h3>Origins (1500s)</h3>
+      <p>Printer scrambles a galley of type to create a specimen book.</p>
+    </article>
+    <article class="info-card">
+      <h3>Longevity</h3>
+      <p>Survived five centuries and the move to electronic typesetting.</p>
+    </article>
+    <article class="info-card">
+      <h3>1960s & Desktop Era</h3>
+      <p>Letraset popularized it; later Aldus PageMaker variations.</p>
+    </article>
+  </section>
+
+  <!-- MAIN PANEL: gradient only inside block, centered content -->
+  <section class="panel readable centered elevate reveal">
+    <h1 class="reveal">US Military Jets</h1>
+
+    <div class="accordions">
+      <details class="accordion smooth" open>
+        <summary class="reveal">F-22 Raptor — Air Superiority</summary>
+        <div class="acc-body">
+          <div class="acc-inner reveal">
+            <p>Key features:</p>
+            <ul class="pill-list">
+              <li>Stealth technology</li>
+              <li>Supercruise capability</li>
+              <li>Advanced avionics</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion smooth">
+        <summary class="reveal">F-35 Lightning II — Multirole Stealth Fighter</summary>
+        <div class="acc-body">
+          <div class="acc-inner reveal">
+            <p>Variants:</p>
+            <ul class="pill-list">
+              <li>F-35A (Air Force)</li>
+              <li>F-35B (Marines, STOVL)</li>
+              <li>F-35C (Navy, Carrier)</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion smooth">
+        <summary class="reveal">B-2 Spirit — Stealth Bomber</summary>
+        <div class="acc-body">
+          <div class="acc-inner reveal">
+            <p>Mission traits:</p>
+            <ul class="pill-list">
+              <li>Radar evasion</li>
+              <li>Long-range strike</li>
+              <li>Nuclear capable</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <p class="fineprint reveal">
+      <a href="#top" class="top-link" aria-label="Back to top">Back to top ↑</a>
+    </p>
+  </section>
+
+  <footer class="page-footer reveal centered">
+    <p><a href="https://www.lipsum.com/" target="_blank" rel="noopener">Text source</a></p>
+  </footer>
+
+  <!-- Scroll reveal + progress + replay on accordion toggle -->
+  <script>
+    (function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---------- Reveal on scroll (replayable) ---------- */
+      const revealEls = document.querySelectorAll('.reveal');
+      if (prefersReduced) {
+        revealEls.forEach(el => el.classList.add('in'));
+      } else if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('in');
+            else entry.target.classList.remove('in'); // replay on re-enter
+          });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => io.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('in'));
+      }
+
+      /* ---------- Replay when <details> toggles ---------- */
+      document.querySelectorAll('details').forEach(d => {
+        d.addEventListener('toggle', () => {
+          d.querySelectorAll('.acc-inner, .reveal').forEach(el => {
+            el.classList.remove('in');
+            void el.offsetWidth; // force reflow
+            el.classList.add('in');
+          });
+        });
+      });
+
+      /* ---------- Scroll progress (subtle, red) ---------- */
+      const bar = document.querySelector('.scroll-progress');
+      if (bar && !prefersReduced) {
+        const update = () => {
+          const h = document.documentElement;
+          const scrolled = (h.scrollTop || document.body.scrollTop);
+          const height = (h.scrollHeight - h.clientHeight);
+          const p = height ? scrolled / height : 0;
+          bar.style.transform = `scaleX(${p})`;
+          requestAnimationFrame(() => {}); // keep GPU happy
+        };
+        document.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+      }
+    })();
+  </script>
 </body>
 </html>

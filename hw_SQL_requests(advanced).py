@@ -7,7 +7,6 @@ def main():
     conn.execute("PRAGMA foreign_keys = ON;")
     cur = conn.cursor()
 
-    # 1) Schema: Salesmen, Customers, Sales
     cur.executescript("""
     CREATE TABLE IF NOT EXISTS Salesmen(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -38,7 +37,6 @@ def main():
     CREATE INDEX IF NOT EXISTS idx_sales_amount   ON Sales(amount);
     """)
 
-    # 2) Seed tiny dataset once
     cur.execute("SELECT COUNT(*) FROM Sales;")
     if cur.fetchone()[0] == 0:
         salesmen = [
@@ -55,7 +53,6 @@ def main():
         cur.executemany("INSERT OR IGNORE INTO Salesmen(name, hire_date) VALUES(?, ?);", salesmen)
         cur.executemany("INSERT OR IGNORE INTO Customers(name, city) VALUES(?, ?);", customers)
 
-        # (salesman_name, customer_name, amount, date)
         sample_sales = [
             ("Alice Reed", "Acme Corp",   1200.00, "2025-08-01"),
             ("Alice Reed", "Globex LLC",  5000.00, "2025-08-05"),
@@ -69,7 +66,6 @@ def main():
             ("Carla Diaz", "Initech",       900.00, "2025-08-22"),
         ]
 
-        # resolve names to IDs and insert
         for sm_name, cu_name, amount, d in sample_sales:
             sm_id = cur.execute("SELECT id FROM Salesmen WHERE name = ?;", (sm_name,)).fetchone()[0]
             cu_id = cur.execute("SELECT id FROM Customers WHERE name = ?;", (cu_name,)).fetchone()[0]
@@ -78,7 +74,6 @@ def main():
                 (sm_id, cu_id, amount, d)
             )
 
-    # 3) The 13 queries (as SQL strings)
     Q_ALL_DEALS = """
         SELECT s.id AS sale_id, sm.name AS salesman, c.name AS customer, s.amount, s.sale_date
         FROM Sales s
@@ -179,7 +174,6 @@ def main():
         GROUP BY sm.id;
     """
 
-    # 4) Demo runs (you can remove these prints if you only need the SQL)
     print("1) All deals:")
     for row in cur.execute(Q_ALL_DEALS):
         print(row)
