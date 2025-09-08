@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>HTML Selector Tutorial</title>
+  <style>
+    body { margin:0; background:#f7f7f7; color:#222;
+           font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; line-height:1.6; }
+    .page { max-width:760px; margin:40px auto; background:#fff; padding:32px 28px;
+            border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+    h1, h2 { text-align:center; margin:0; }
+    h1 { font-size:2rem; }
+    h2 { margin-top:20px; font-size:1.5rem; }
+    h3 { margin-top:28px; font-size:1.25rem; text-align:center; }
+    .rule { height:1px; background:#ddd; margin:16px 0 24px; }
+    p { margin:12px 0; }
+    a { color:#0645ad; }
+    code, pre { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    code { background:#f3f4f6; padding:0 4px; border-radius:4px; }
+    pre  { background:#f3f4f6; padding:16px; border-radius:6px; overflow:auto; }
+    .tags { margin-top:16px; font-size:.9rem; color:#555; }
+    .tags a { margin-right:8px; }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>What Is a Selector?</h1>
+  <div class="rule"></div>
+
+  <h2>Why Selectors Exist</h2>
+  <p>
+    When <strong><span>HTML</span></strong> was invented, it gave us a way to describe the <em>structure</em> of a document: headings, paragraphs, links, tables.
+    But <strong><span>HTML</span></strong> alone doesn’t control how things look. That’s where <strong><span>CSS (Cascading Style Sheets)</span></strong> enters.
+    <strong><span>CSS</span></strong> has two halves:
+  </p>
+  <ul>
+    <li><strong>Selectors</strong> — decide <i>which</i> elements are affected.</li>
+    <li><strong>Declarations</strong> — decide <i>how</i> they are affected.</li>
+  </ul>
+  <p>
+    Without selectors, <strong>CSS</strong> would be powerless. A selector is the bridge between the raw structure of
+    <strong>HTML</strong> and the style you want to apply.
+  </p>
+
+  <h2>Core Definition</h2>
+  <p>
+    A <strong>selector</strong> is a <strong>pattern</strong> used by the browser to <strong>match a set of element nodes</strong> in the document tree (DOM).
+    The result is a (possibly empty) set of elements; the rule’s declarations apply to every element in that set.
+  </p>
+  <ul>
+    <li>The <strong>rightmost compound</strong> in a selector determines the <em>subject</em> being styled.</li>
+    <li>Other parts provide <em>conditions</em> (ancestry, siblings, state) that must be true for the subject.</li>
+  </ul>
+
+  <p><strong>Example:</strong></p>
+  <pre><code>h1 {
+  color: navy;
+}</code></pre>
+
+  <h2>Learning Path (Ordered Steps)</h2>
+  <ol>
+    <li>Define a selector precisely.</li>
+    <li>Understand how selectors match elements in the DOM.</li>
+    <li>Learn simple selectors (building blocks).</li>
+    <li>Learn combinators (relationships).</li>
+    <li>Use selector lists and helpers.</li>
+    <li>Master specificity (why one rule wins).</li>
+    <li>Adopt common, resilient patterns.</li>
+    <li>Avoid anti-patterns.</li>
+    <li>Use a review checklist.</li>
+    <li>Practice with targeted exercises.</li>
+  </ol>
+
+  <h2>How Matching Works (Mental Model)</h2>
+  <ol>
+    <li>The browser parses HTML into a <strong>DOM tree</strong> of elements.</li>
+    <li>For each CSS rule, the engine evaluates the <strong>selector right-to-left</strong>:
+      <ul>
+        <li>Start with the rightmost compound (e.g., <code>.btn</code>).</li>
+        <li>Walk <em>up/across</em> the tree via combinators (<code>&gt;</code>, space, <code>+</code>, <code>~</code>, <code>||</code>).</li>
+      </ul>
+    </li>
+    <li>If all conditions hold, the element <strong>matches</strong> and declarations apply.</li>
+  </ol>
+  <p><em>Implication:</em> favor <strong>clarity</strong> and stable hooks over micro-optimizing selector performance.</p>
+
+  <h2>Simple Selectors (Building Blocks)</h2>
+  <ul>
+    <li><strong>Type</strong>: <code>h1</code>, <code>p</code>, <code>ul</code> — by tag name.</li>
+    <li><strong>Universal</strong>: <code>*</code> — any element (use sparingly, e.g., resets).</li>
+    <li><strong>Class</strong>: <code>.note</code> — element whose <code>class</code> contains <code>note</code>.</li>
+    <li><strong>ID</strong>: <code>#main</code> — element with <code>id="main"</code> (ideally unique).</li>
+    <li><strong>Attribute</strong>:
+      <ul>
+        <li><code>[data-kind]</code> — has the attribute.</li>
+        <li><code>[lang="uk"]</code> — exact value.</li>
+        <li><code>[type^="text"]</code> — value starts with.</li>
+        <li><code>[href$=".pdf"]</code> — value ends with.</li>
+        <li><code>[class*=" card-"]</code> — value contains substring.</li>
+        <li>Case-insensitive compare when supported: <code>[type="email" i]</code>.</li>
+      </ul>
+    </li>
+    <li><strong>Pseudo-classes</strong> (state/structure):
+      <ul>
+        <li><code>:hover</code>, <code>:focus</code>, <code>:disabled</code>, <code>:required</code></li>
+        <li><code>:first-child</code>, <code>:last-child</code>, <code>:only-child</code></li>
+        <li><code>:nth-child(odd)</code>, <code>:nth-child(2n+1)</code>, <code>:nth-of-type(3)</code></li>
+        <li><code>:is()</code>, <code>:where()</code>, <code>:not()</code></li>
+      </ul>
+    </li>
+    <li><strong>Pseudo-elements</strong> (subparts of an element’s rendering):
+      <ul>
+        <li><code>::before</code>, <code>::after</code> (generated boxes)</li>
+        <li><code>::first-line</code>, <code>::first-letter</code></li>
+        <li><code>::marker</code>, <code>::selection</code> (support varies by UA)</li>
+      </ul>
+    </li>
+  </ul>
+  <p><strong>Rule of thumb:</strong> <em>pseudo-classes</em> describe state/position; <em>pseudo-elements</em> address subparts.</p>
+
+  <h2>Combinators (Relationships)</h2>
+  <ul>
+    <li><strong>Descendant</strong> (space): <code>article .note</code> — any depth inside.</li>
+    <li><strong>Child</strong> (<code>&gt;</code>): <code>ul &gt; li</code> — direct child only.</li>
+    <li><strong>Adjacent sibling</strong> (<code>+</code>): <code>h2 + p</code> — first <code>p</code> immediately after <code>h2</code>.</li>
+    <li><strong>General sibling</strong> (<code>~</code>): <code>h2 ~ p</code> — all following <code>p</code> siblings.</li>
+    <li><strong>Column</strong> (<code>||</code>): table/column contexts (advanced).</li>
+  </ul>
+
+  <p><strong>Examples:</strong></p>
+  <pre><code>/* Rightmost subject is li */
+nav &gt; ul &gt; li.active a { text-decoration: underline; }
+
+/* Subject is .card (rightmost). Must have a data-kind attribute and be inside .grid */
+.grid &gt; .card[data-kind="product"] { /* … */ }</code></pre>
+
+  <h2>Selector Lists &amp; Functional Helpers</h2>
+  <p>A comma groups complete selectors; the rule applies to the <em>union</em> of matches.</p>
+  <pre><code>h1, h2, .title { font-family: ui-serif, Georgia, serif; }</code></pre>
+  <ul>
+    <li><code>:is(h1, h2, .title)</code> — grouping <em>inside</em> a selector; keeps the specificity of the most specific argument.</li>
+    <li><code>:where(h1, h2, .title)</code> — like <code>:is</code> but adds <em>zero specificity</em>, useful for safe scoping.</li>
+  </ul>
+
+  <h2>Specificity (Why One Rule Wins)</h2>
+  <p>Specificity is a 4-part vector compared lexicographically: <code>(a, b, c, d)</code>.</p>
+  <ul>
+    <li><strong>a</strong>: inline styles (present = 1).</li>
+    <li><strong>b</strong>: number of <strong>ID</strong> selectors.</li>
+    <li><strong>c</strong>: number of <strong>classes</strong>, <strong>attributes</strong>, and <strong>pseudo-classes</strong>.</li>
+    <li><strong>d</strong>: number of <strong>type</strong> and <strong>pseudo-element</strong> selectors.</li>
+  </ul>
+  <pre><code>/* Specificity: (0,0,1,0) */
+.note { color: teal; }
+
+/* Specificity: (0,1,0,0) — wins over .note */
+#main .note { color: purple; }
+
+/* :where adds zero specificity; the rest decides */
+:where(.prose) h2 { font-size: 1.5rem; }</code></pre>
+  <p><strong>Best practice:</strong> keep specificity low and consistent; reserve IDs/inline styles for rare cases.</p>
+
+  <h2>Common, Resilient Patterns</h2>
+  <ul>
+    <li><strong>Scope then target</strong>: <code>.article .meta</code> rather than global <code>.meta</code>.</li>
+    <li><strong>Attribute hooks for state</strong>: <code>[aria-expanded="true"]</code> for open/closed.</li>
+    <li><strong>State via classes</strong>: <code>.tab.is-active</code> for toggles.</li>
+    <li><strong>Use <code>:not()</code> sparingly</strong>: keep intent readable.</li>
+    <li><strong>Structural selection</strong>: <code>li:nth-child(2n)</code> for zebra; prefer <code>:nth-of-type</code> when sibling types vary.</li>
+  </ul>
+
+  <h2>Anti-Patterns to Avoid</h2>
+  <ul>
+    <li><strong>Over-qualified selectors</strong>: <code>ul.nav &gt; li.item &gt; a.link</code> when <code>.nav a</code> suffices.</li>
+    <li><strong>ID-heavy chains</strong>: <code>#header #nav #login a</code> — brittle/over-specific.</li>
+    <li><strong>Deep nesting for layout</strong>: couples styles to HTML depth.</li>
+    <li><strong>Relying on tag names for components</strong>: prefer class-based APIs (<code>.card</code>, <code>.btn</code>).</li>
+    <li><strong><code>!important</code>-driven overrides</strong>: usually a smell; fix specificity upstream.</li>
+  </ul>
+
+  <h2>Review Checklist</h2>
+  <ul>
+    <li>Does the selector clearly state intent (what and where)?</li>
+    <li>Is specificity as low as possible to do the job?</li>
+    <li>Would a class/attribute be more stable than structural depth?</li>
+    <li>Are states expressed with classes or ARIA?</li>
+    <li>Can multiple targets be grouped with <code>,</code> or <code>:is()</code>?</li>
+  </ul>
+
+  <h2>Practice</h2>
+  <h3>A. Scoping &amp; State</h3>
+  <p><strong>HTML</strong>:</p>
+  <pre><code>&lt;article class="post"&gt;
+  &lt;h2 class="title"&gt;…&lt;/h2&gt;
+  &lt;button class="toc" aria-expanded="false"&gt;Contents&lt;/button&gt;
+&lt;/article&gt;</code></pre>
+  <p><strong>Tasks</strong>:
+    1) Style <code>h2</code> only inside <code>.post</code>.
+    2) Make <code>.toc</code> look active when <code>aria-expanded="true"</code>.
+  </p>
+  <p><strong>One correct solution</strong>:</p>
+  <pre><code>.post .title { font-weight: 600; }
+.toc[aria-expanded="true"] { background: #eef; }</code></pre>
+
+  <h3>B. Structure vs Type</h3>
+  <p><strong>HTML</strong>:</p>
+  <pre><code>&lt;ul class="menu"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Shop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Cart&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  <p><strong>One approach</strong>:</p>
+  <pre><code>.menu &gt; li &gt; a { padding: .5rem 1rem; }
+.menu &gt; li:nth-child(even) { background: #f9f9f9; }</code></pre>
+
+  <h3>C. Grouping &amp; Helpers</h3>
+  <pre><code>:where(h1, .page-title) {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+}</code></pre>
+
+  <h2>Quick Reference (Selector → Matches)</h2>
+  <table>
+    <thead>
+      <tr><th>Selector</th><th>Matches</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>*</code></td><td>Any element</td></tr>
+      <tr><td><code>p</code></td><td><code>&lt;p&gt;</code> elements</td></tr>
+      <tr><td><code>.lead</code></td><td>Elements with class <code>lead</code></td></tr>
+      <tr><td><code>#site-nav</code></td><td>Element with id <code>site-nav</code></td></tr>
+      <tr><td><code>[data-role]</code></td><td>Has attribute</td></tr>
+      <tr><td><code>[href^="/"]</code></td><td>Link whose <code>href</code> starts with <code>/</code></td></tr>
+      <tr><td><code>ul &gt; li</code></td><td><code>li</code> direct child of <code>ul</code></td></tr>
+      <tr><td><code>h2 + p</code></td><td>First <code>p</code> immediately after <code>h2</code></td></tr>
+      <tr><td><code>h2 ~ p</code></td><td>All following <code>p</code> siblings</td></tr>
+      <tr><td><code>.card:is(h1, h2)</code></td><td><code>h1</code> or <code>h2</code> with class <code>card</code></td></tr>
+      <tr><td><code>.btn:not(.primary)</code></td><td><code>.btn</code> elements that are not <code>.primary</code></td></tr>
+      <tr><td><code>li:nth-of-type(3)</code></td><td>3rd <code>li</code> among its <code>li</code> siblings</td></tr>
+      <tr><td><code>a::before</code></td><td>Generated <code>::before</code> box of links</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Minimal Live Example</h2>
+  <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Selectors — Chapter 1 Demo&lt;/title&gt;
+  &lt;style&gt;
+/* 1) Scope then target */
+.article .title { font-weight: 700; }
+
+/* 2) Attribute state */
+.toggle[aria-pressed="true"] { background: #e6f0ff; }
+
+/* 3) Structure (child + nth) */
+.nav &gt; li:nth-child(odd) { background: #fafafa; }
+
+/* 4) Grouping without raising specificity */
+:where(h1, .display) { font-size: 2rem; line-height: 1.2; }
+
+/* 5) Pseudo-element */
+.note::before { content: "ℹ︎ "; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;article class="article"&gt;
+    &lt;h1 class="title"&gt;Selectors in the Real World&lt;/h1&gt;
+    &lt;ul class="nav"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Docs&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;API&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" class="note"&gt;Guide&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;button class="toggle" aria-pressed="false"&gt;Toggle&lt;/button&gt;
+  &lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>A selector is a <strong>pattern</strong> that returns a <strong>set of elements</strong>.</li>
+    <li>Build from simple parts; connect with combinators.</li>
+    <li>Keep specificity <strong>low and consistent</strong>.</li>
+    <li>Prefer <strong>classes/attributes</strong> for stable hooks; use structural selectors carefully.</li>
+  </ul>
+
+  <h2>Next Step</h2>
+  <p>In Chapter 2, dive into the <strong>Cascade &amp; Specificity</strong> in depth (including <code>@layer</code>, source order, and large-stylesheet strategies).</p>
+</div>
+
+</body>
+</html>
