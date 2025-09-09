@@ -3,108 +3,104 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hyperion — Demo (Bootstrap)</title>
+    <title>Hyperion daily bugle</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body class="bg-body-tertiary">
 
   <!-- your navbar (left as-is) -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">NO Shit dude</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Not Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Nothing here</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Fuck OFF</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown link</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main.html">Navbar scroll</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about.html">About</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Link</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- simple Hyperion hero added on top (page content below stays) -->
-  <section class="py-5 bg-white border-bottom">
-    <div class="container">
-      <div class="p-4 p-lg-5 rounded-3 bg-light">
-        <h1 class="display-6 fw-semibold mb-2">Hyperion Archives (Fan)</h1>
-        <p class="mb-3 text-secondary">
-          Notes from the Hegemony era: the Time Tombs, the Shrike, and the pilgrims who risk the WorldWeb to reach them.
-          This is a minimalist Bootstrap template with lore sprinkled in—replace text as needed.
+
+  <h1 class="text-center my-4">About us</h1>
+  <!-- About Company Block -->
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="p-5 bg-light rounded shadow-sm">
+        <h2 class="fw-bold text-center mb-4 text-primary">About ChronoTravel Ltd.</h2>
+        <p class="lead text-muted">
+          Founded in the golden age of the Hegemony, <strong>ChronoTravel Ltd.</strong> has guided
+          countless brave (and occasionally reluctant) souls on their journeys to the legendary
+          <em>Time Tombs</em>. While many firms promise “safe passage,” we prefer to offer
+          something far more valuable: <span class="fw-semibold">memorable experiences</span>.
         </p>
-        <div class="d-flex gap-2">
-          <a href="#" class="btn btn-primary btn-sm">Start Pilgrimage</a>
-          <a href="#" class="btn btn-outline-secondary btn-sm">Read All Thing Dispatches</a>
+
+        <p>
+          Our operations combine cutting-edge WorldWeb logistics with the timeless art of
+          pilgrim storytelling. Each tour is designed not only to bring you to the Tombs,
+          but to ensure you return with a tale worthy of the Cantos… provided you return at all.
+        </p>
+
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h5 class="fw-semibold text-secondary">What We Offer</h5>
+            <ul class="list-unstyled">
+              <li>• Expert guides licensed in both navigation and poetry recitation</li>
+              <li>• Climate-controlled sand-skimmers with holo-windows</li>
+              <li>• Complimentary chrono-insurance (excludes Shrike encounters)</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="fw-semibold text-secondary">Our Philosophy</h5>
+            <p class="mb-0">
+              Pilgrimage is not merely a journey — it is an embrace of uncertainty,
+              a toast to destiny, and sometimes, a polite sprint away from razor-sharp
+              appendages. At ChronoTravel, we believe even terror should feel first-class.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <blockquote class="blockquote">
+            <p class="mb-0">“We don’t guarantee survival, but we guarantee the story will be unforgettable.”</p>
+            <footer class="blockquote-footer"><br>Company Motto, inscribed at Tau Ceti HQ</footer>
+          </blockquote>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <h1 class="text-center my-4">Hello, world!</h1>
 
   <div class="container text-center">
     <div class="row g-4 justify-content-center">
-
-      <!-- Card 1: Tree of Pain -->
-      <div class="col-12 col-sm-6 col-lg-4 d-flex">
-        <div class="card w-100" style="max-width: 22rem;">
-          <img src="IMG_3870.PNG" class="card-img-top" alt="Concept art placeholder">
-          <div class="card-body">
-            <h5 class="card-title">Tree of Pain (Hyperion)</h5>
-            <p class="card-text">
-              A vast, thorned structure near the Time Tombs where victims are impaled in timeless torment.
-              Pilgrims speak of whispers caught in the wind and metal that feels alive.
-              Approach is discouraged without farcaster clearance.
-            </p>
-            <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: The Shrike -->
-      <div class="col-12 col-sm-6 col-lg-4 d-flex">
-        <div class="card w-100" style="max-width: 22rem;">
-          <img src="shraik(1024x1792).jpeg" class="card-img-top" alt="Shrike illustration placeholder">
-          <div class="card-body">
-            <h5 class="card-title">The Shrike</h5>
-            <p class="card-text">
-              A thorn-armored being said to move through time as easily as shadow.
-              Feared and worshiped, it is the rumored guardian—and judge—of the Tombs.
-              Pilgrim advisories update hourly via All Thing relays.
-            </p>
-            <a href="#" class="btn btn-primary btn-sm">Pilgrim Advisory</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: Time Tombs -->
-      <div class="col-12 col-sm-6 col-lg-4 d-flex">
-        <div class="card w-100" style="max-width: 22rem;">
-          <img src="IMG_3870.PNG" class="card-img-top" alt="Time Tombs dunes placeholder">
-          <div class="card-body">
-            <h5 class="card-title">The Time Tombs</h5>
-            <p class="card-text">
-              Ancient structures moving backward through time across Hyperion’s deserts.
-              Instruments report paradox drift; researchers request controlled access and escort.
-              Permit windows open when chrono-storms subside.
-            </p>
-            <a href="#" class="btn btn-primary btn-sm">Request Permit</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
