@@ -1,0 +1,262 @@
+/* ===== FORCE GLOBAL DARK  ===== */
+html, body, body.bg-body-tertiary { background:#1e1f22 !important; color:#e8e9ec; }
+:root{
+  --surface:#2a2b2f; --surface-2:#30333a;
+  --border:rgba(255,255,255,.10); --text:#e8e9ec; --muted:#a9aebb; --brand: #ffffff;
+}
+
+.hero-logo{ margin:0 !important; padding:0 !important; line-height:0; }
+.hero-logo img{ display:block; }  /* removes the tiny bottom gap */
+
+/* ===== Color control for header  ===== */
+
+.section-hero--compact { padding:16px 0 22px; }
+.section-hero--spacious{ padding:44px 0 52px; }
+
+/* color themes (match your navbar palette) */
+.section-hero--brand::before{
+  background:linear-gradient(90deg, rgba(76,38,160,.22), rgba(243,109,255,.22));
+}
+.section-hero--neutral::before{
+  background:linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.06));
+}
+.section-hero--blue::before{
+  background:linear-gradient(90deg, rgba(61,73,255,.18), rgba(156,107,255,.18));
+}
+
+
+/* 2) Cursive masthead options */
+.bugle-script {                /* elegant */
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: .01em;
+  text-shadow: 0 1px 0 rgba(0,0,0,.18);
+}
+
+.bugle-script-strong {         /* bolder, punchier */
+  font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+.bugle-script-retro {          /* sporty retro */
+  font-family: "Playball", cursive;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+/* Darken all light panels, including .bg-body */
+body .bg-white,
+body .bg-light,
+body .bg-body{
+  background:var(--surface) !important; color:var(--text) !important;
+  border:1px solid var(--border);
+  box-shadow:0 10px 28px rgba(0,0,0,.45), 0 1px 0 rgba(255,255,255,.03) inset;
+}
+
+.rounded-3{ border-radius:16px !important; }
+.border-bottom{ border-bottom:1px solid var(--border) !important; }
+h1,h2,h3,h4,h5{ color:var(--text) !important; }
+.text-muted, .text-secondary{ color:var(--muted) !important; }
+hr{ border-color:var(--border) !important; }
+
+/* ===== NAVBAR — visibly separate, floating ===== */
+body .navbar.navbar-expand-lg {
+  position: sticky; top:0; z-index:1030;
+  background: linear-gradient(90deg, rgba(76,38,160,.86), rgba(243,109,255,.86)) !important;
+  backdrop-filter:saturate(160%) blur(12px);
+  -webkit-backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 16px 34px rgba(0,0,0,.55);
+}
+/* make the gradient fill the entire glyph area */
+.bugle-gradient{
+  background-image:linear-gradient(90deg,#3D49FF,#9C6BFF 55%,#FF5AE6);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent; /* key */
+  display:inline-block; background-size:100% 100%; background-position:center;
+}
+
+/* center the heading regardless of container quirks */
+.bugle-center{ display:block; text-align:center; margin:0 auto; }
+
+/* optional: soften heavy shadow  */
+/* .bugle-glow{ text-shadow:0 1px 0 rgba(0,0,0,.35), 0 6px 16px rgba(0,0,0,.2); } */
+
+
+
+
+body .navbar .navbar-brand{ color:#fff !important; font-weight:600; letter-spacing:.2px; }
+body .navbar .nav-link{ color:#f2f3f5 !important; font-weight:500; opacity:.95; }
+body .navbar .nav-link:hover{ color:#ffffff !important; opacity:1; }
+body .navbar .nav-link.active{ color:var(--brand) !important; font-weight:700; }
+body .navbar .nav-link.disabled{ color:#8a8e97 !important; }
+
+/* Navbar search/button readable */
+body .navbar .form-control{
+  background:rgba(255,255,255,.08); color:#fff; border:1px solid var(--border);
+}
+body .navbar .form-control::placeholder{ color:#b9bfca; }
+body .navbar .btn-outline-success{ color:var(--brand); border-color:var(--brand); }
+body .navbar .btn-outline-success:hover{ background:var(--brand); color:#fff; }
+
+/* Dropdown dark */
+body .dropdown-menu{ background:#1f2126; border:1px solid var(--border); box-shadow:0 12px 28px rgba(0,0,0,.5); }
+body .dropdown-item{ color:#e6e7ea; }
+body .dropdown-item:hover{ background:#2a2d34; color:#fff; }
+
+/* ===== CARDS / BLOCKS ===== */
+body .card{
+  background:var(--surface); color:var(--text);
+  border:1px solid var(--border); border-radius:14px;
+  box-shadow:0 10px 28px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.03) inset;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+body .card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 36px rgba(0,0,0,.55), 0 1px 0 rgba(255,255,255,.04) inset;
+  border-color:rgba(255,255,255,.14);
+}
+body .card-title{ color:#fff !important; font-weight:700; }
+body .card-text{ color:var(--muted) !important; }
+
+/* Images: show full art, equal height across all cards (no cropping) */
+body .card-img-top{
+  width:100%; height:420px;           /* adjust taller/shorter */
+  object-fit:cover;                  /* no crop */
+  background:#141518;                 /* letterbox backdrop */
+  padding:8px;
+  border-bottom:1px solid var(--border);
+}
+
+/* ===== FOOTER cohesive dark ===== */
+body .bg-dark{
+  background:#141518 !important;
+  box-shadow:0 -12px 28px rgba(0,0,0,.55) inset, 0 -1px 0 var(--border) inset;
+}
+body .bg-dark .link-light{ color:#e6e7ea !important; }
+body .bg-dark .link-light:hover{ color:#fff !important; }
+body .bg-dark .text-secondary{ color:#9ea5b0 !important; }
+
+/* ===== Null-Portal Form  ===== */
+
+/* Make selects, inputs, textareas match your dark surfaces */
+.needs-validation .form-control,
+.needs-validation .form-select {
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.needs-validation .form-control::placeholder { color: #b9bfca; }
+.needs-validation .form-control:focus,
+.needs-validation .form-select:focus {
+  box-shadow: 0 0 0 .25rem rgba(156,107,255,.25);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Radio/checkbox visibility on dark bg */
+.form-check-input {
+  background: #1f2126; border:1px solid var(--border);
+}
+.form-check-input:checked {
+  background-color: #9C6BFF; border-color: #9C6BFF;
+}
+
+/* Compact help/invalid text tone */
+.invalid-feedback,
+.valid-feedback { color: #ff9dbb !important; } /* playful but readable */
+/* Keep form fields dark even when focused/opened/autofilled */
+
+/* Base */
+.needs-validation .form-control,
+.needs-validation .form-select,
+textarea.form-control {
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Focus (click into input/select) */
+.needs-validation .form-control:focus,
+.needs-validation .form-select:focus,
+textarea.form-control:focus {
+  background: rgba(255,255,255,.10);
+  color: var(--text);
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 0 0 .25rem rgba(156,107,255,.25); /* your purple glow */
+  outline: none;
+}
+
+/* The dropdown list itself (options) */
+.needs-validation .form-select option,
+.needs-validation .form-select optgroup {
+  background: var(--surface);         /* #2a2b2f */
+  color: var(--text);                 /* #e8e9ec */
+}
+.needs-validation .form-select option:checked,
+.needs-validation .form-select option:hover {
+  background: var(--surface-2);       /* #30333a */
+  color: var(--text);
+}
+
+/* Remove sudden white in Chrome autofill */
+.needs-validation input:-webkit-autofill,
+.needs-validation textarea:-webkit-autofill,
+.needs-validation select:-webkit-autofill {
+  -webkit-text-fill-color: var(--text);
+  box-shadow: 0 0 0 1000px rgba(255,255,255,.06) inset !important;
+  transition: background-color 5000s ease-in-out 0s; /* suppress flash */
+}
+
+/* Firefox: keep text visible when focusing selects */
+.needs-validation .form-select:-moz-focusring {
+  color: var(--text);
+  text-shadow: 0 0 0 var(--text);
+}
+/* ===== Section Hero (matches navbar vibe) ===== */
+.section-hero{
+  position: relative;
+  padding: 28px 0 36px;            /* breathing room */
+  margin: 0 0 12px;                /* tight to the form */
+  isolation: isolate;              /* keep effects scoped */
+}
+
+.section-hero::before{
+  content:"";
+  position: absolute; inset: 0;
+  /* soft gradient band; reuses brand hues */
+  background:
+    linear-gradient(90deg, rgba(76,38,160,.22), rgba(243,109,255,.22));
+  filter: saturate(140%);
+  z-index: -1;
+}
+
+.section-hero::after{
+  /* subtle bottom divider glow */
+  content:"";
+  position:absolute; left:0; right:0; bottom:0; height:1px;
+  background: linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.16), rgba(255,255,255,.08));
+}
+
+.section-hero h1{
+  font-family: "Cinzel", "Bodoni Moda", serif; /* already loaded */
+  font-weight: 700;
+  letter-spacing:.2px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.35);
+}
+/* Center the logo row */
+.hero-logo { text-align:center; line-height:0; }
+
+/* Glass pill behind the logo */
+.logo-pill{
+  display:inline-block;
+  padding:8px 16px;                 /* space around the image */
+  border-radius:9999px;             /* pill shape */
+  background:linear-gradient(90deg, rgba(76,38,160,.20), rgba(243,109,255,.20));
+  backdrop-filter:blur(8px) saturate(140%);
+  -webkit-backdrop-filter:blur(8px) saturate(140%);
+  border:1px solid var(--border);
+  box-shadow:0 10px 24px rgba(0,0,0,.45);
+}

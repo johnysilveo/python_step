@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Candidate Form — File Uploads</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-body-tertiary">
+
+  <h1 class="mb-4 text-center">Candidate Questionnaire</h1>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        <form class="p-4 border rounded bg-body needs-validation" action="#" method="post"
+              enctype="multipart/form-data" novalidate>
+
+          <!-- Name -->
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name"
+                   placeholder="Enter your full name" minlength="2" maxlength="80" required>
+            <div class="invalid-feedback">Please enter your name (2–80 characters).</div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email"
+                   placeholder="name@example.com" required>
+            <div class="invalid-feedback">Please provide a valid email address.</div>
+          </div>
+
+          <!-- Position -->
+          <div class="mb-3">
+            <label for="position" class="form-label">Position</label>
+            <select class="form-select" id="position" name="position" required>
+              <option value="" selected disabled>Select a position…</option>
+              <option value="Junior Developer">Junior Developer</option>
+              <option value="Frontend Engineer">Frontend Engineer</option>
+              <option value="Backend Engineer">Backend Engineer</option>
+              <option value="UI/UX Designer">UI/UX Designer</option>
+            </select>
+            <div class="invalid-feedback">Please choose a position.</div>
+          </div>
+
+          <!-- Resume (PDF/DOCX up to 5 MB) -->
+          <div class="mb-3">
+            <label for="resume" class="form-label">Resume (PDF/DOC/DOCX, up to 5 MB)</label>
+            <input type="file" class="form-control" id="resume" name="resume"
+                   accept=".pdf,.doc,.docx" required>
+            <div class="form-text">Accepted: .pdf, .doc, .docx — max 5 MB.</div>
+            <div class="invalid-feedback" id="resumeFeedback">
+              Please upload a PDF/DOC/DOCX file up to 5 MB.
+            </div>
+          </div>
+
+          <!-- Portfolio (optional URL) -->
+          <div class="mb-3">
+            <label for="portfolio" class="form-label">Portfolio (optional, URL)</label>
+            <input type="url" class="form-control" id="portfolio" name="portfolio"
+                   placeholder="https://your-portfolio.example">
+            <div class="invalid-feedback">Please enter a valid URL (or leave blank).</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+
+  <!-- Client-side validation (Bootstrap + file size/type check) -->
+  <script>
+    (function () {
+      'use strict';
+      const MAX_BYTES = 5 * 1024 * 1024; // 5 MB
+      const allowedExt = ['pdf', 'doc', 'docx'];
+
+      const form = document.querySelector('.needs-validation');
+      const resumeInput = document.getElementById('resume');
+      const resumeFeedback = document.getElementById('resumeFeedback');
+
+      resumeInput.addEventListener('change', () => {
+        resumeInput.setCustomValidity('');
+        if (resumeInput.files.length) {
+          const file = resumeInput.files[0];
+          const ext = (file.name.split('.').pop() || '').toLowerCase();
+          if (!allowedExt.includes(ext)) {
+            resumeInput.setCustomValidity('invalid-ext');
+            resumeFeedback.textContent = 'File must be PDF/DOC/DOCX.';
+          } else if (file.size > MAX_BYTES) {
+            resumeInput.setCustomValidity('too-large');
+            resumeFeedback.textContent = 'File exceeds 5 MB.';
+          }
+        }
+      });
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>
+</body>
+</html>

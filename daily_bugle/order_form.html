@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kaushan+Script&family=Playball&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700;6..96,900&family=Cinzel:wght@700;900&display=swap"
+          rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hyperion daily bugle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="main.html">
+            <img src="hyperion_logo.svg" alt="Hyperion Daily Bugle" style="height:35px; width:auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Contacts</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="null_portal.html" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        null_portals
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="null_portal.html">About null_portal</a></li>
+                        <li><a class="dropdown-item" href="order_form.html">Custom null_portal</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Claim Department</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<header class="section-hero">
+  <h1 class="mb-0 bugle-center">Custom Null-Portal Frame — Order Form</h1>
+</header>
+
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-7">
+      <form class="p-4 border rounded bg-body needs-validation" action="#" method="post" novalidate>
+
+        <!-- 1) Full Name -->
+        <div class="mb-3">
+          <label for="fullname" class="form-label">Full Name</label>
+          <input type="text" id="fullname" name="fullname" class="form-control"
+                 placeholder="Enter your full name" minlength="2" maxlength="80" required>
+          <div class="invalid-feedback">Please enter your full name (2–80 characters).</div>
+        </div>
+
+        <!-- 2) Address -->
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" id="address" name="address" class="form-control"
+                 placeholder="Street, City, Sector, Planet" required>
+          <div class="invalid-feedback">Please provide your delivery address.</div>
+        </div>
+
+        <!-- 3) Phone -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="tel" id="phone" name="phone" class="form-control"
+                 placeholder="+1 (555) 123-4567" pattern="^[0-9+()\-.\s]{7,}$" required>
+          <div class="invalid-feedback">Please provide a valid phone number.</div>
+        </div>
+
+        <!-- 4) Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-control"
+                 placeholder="name@example.com" required>
+          <div class="invalid-feedback">Please provide a valid email address.</div>
+        </div>
+
+        <!-- 5) Frame Size -->
+        <div class="mb-3">
+          <label for="size" class="form-label">Frame Size</label>
+          <select id="size" name="size" class="form-select" required>
+            <option value="" selected disabled>Select size…</option>
+            <option>Doorway (80×200 cm)</option>
+            <option>Archway (120×240 cm)</option>
+            <option>Wall-scale (200×300 cm)</option>
+            <option>Custom (we’ll confirm)</option>
+          </select>
+          <div class="invalid-feedback">Please choose a frame size.</div>
+        </div>
+
+        <!-- 6) Aperture Shape -->
+        <div class="mb-3">
+          <label for="shape" class="form-label">Aperture Shape</label>
+          <select id="shape" name="shape" class="form-select" required>
+            <option value="" selected disabled>Select shape…</option>
+            <option>Rectangular</option>
+            <option>Elliptical</option>
+            <option>Hexagonal</option>
+            <option>“Time-Tomb Bevel” (faceted)</option>
+          </select>
+          <div class="invalid-feedback">Please select an aperture shape.</div>
+        </div>
+
+        <!-- 7) Frame Material -->
+        <div class="mb-3">
+          <label class="form-label d-block">Frame Material</label>
+          <div class="row g-2">
+            <div class="col-12 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="material" id="mat1" value="Cursed Oak" required>
+                <label class="form-check-label" for="mat1">Cursed Oak (stabilized)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="material" id="mat2" value="Meteorite Alloy">
+                <label class="form-check-label" for="mat2">Meteorite Alloy </label>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="material" id="mat3" value="Obsidian Composite">
+                <label class="form-check-label" for="mat3">Obsidian Composite <i>Piano Black</i></label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="material" id="mat4" value="Human Leather (fictional)">
+                <label class="form-check-label" for="mat4">Human Leather</label>
+              </div>
+            </div>
+          </div>
+          <div class="invalid-feedback d-block">Please select a material (yes, the joke option is not real).</div>
+        </div>
+
+        <!-- 8) Finish -->
+        <div class="mb-3">
+          <label for="finish" class="form-label">Finish</label>
+          <select id="finish" name="finish" class="form-select" required>
+            <option value="" selected disabled>Select finish…</option>
+            <option>Matte Void</option>
+            <option>Brushed Starlight</option>
+            <option>High-Gloss Event Horizon</option>
+            <option>Antique Time-Patina</option>
+          </select>
+          <div class="invalid-feedback">Please choose a finish.</div>
+        </div>
+
+        <!-- 9) Need Cleansing Napkins?  -->
+        <div class="mb-3 form-check">
+          <input class="form-check-input" type="checkbox" id="napkins" name="napkins">
+          <label class="form-check-label" for="napkins">Include “post-transit cleansing” napkins</label>
+        </div>
+
+        <!-- 10) Runic Inlays -->
+        <div class="mb-3">
+          <label for="runes" class="form-label">Runic Inlays (qty)</label>
+          <input type="number" id="runes" name="runes" class="form-control" min="0" max="42" value="0" required>
+          <div class="invalid-feedback">Please enter a number between 0 and 42.</div>
+        </div>
+
+        <!-- 11) Power Source -->
+        <div class="mb-3">
+          <label for="power" class="form-label">Power Source</label>
+          <select id="power" name="power" class="form-select" required>
+            <option value="" selected disabled>Select power source…</option>
+            <option>House Mains (120–240V)</option>
+            <option>Portable Singularity Cell</option>
+            <option>Solar + Capacitors</option>
+            <option>Unreliable “Free Energy” (not recommended)</option>
+          </select>
+          <div class="invalid-feedback">Please select a power source.</div>
+        </div>
+
+        <!-- 12) Additional Notes -->
+        <div class="mb-3">
+          <label for="notes" class="form-label">Additional Notes</label>
+          <textarea id="notes" name="notes" class="form-control" rows="4"
+                    placeholder="Mounting quirks, delivery window, pet Shrikes, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Request Quote</button>
+
+        <p class="small text-secondary mt-3 mb-0">
+          All materials and features are fictional; no real human-derived materials are used. This is a parody/fan concept.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+
+  <!-- Bootstrap validation helper -->
+  <script>
+    (function () {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+    <!-- =================== FOOTER =================== -->
+<footer class="bg-dark text-light mt-5">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="fw-bold fs-5">All Thing • Hegemony Archives</div>
+                <p class="text-secondary small mb-3">
+                    Unofficial fan portal on the Hyperion saga: Time Tombs briefs, pilgrim notices, and archive
+                    excerpts.
+                </p>
+                <address class="small text-secondary mb-0">
+                    Tau Ceti Center, Sector 7<br>
+                    WorldWeb Relay: <span class="text-light">0x-SHRIKE</span><br>
+                    <a class="link-light text-decoration-none" href="#">hegemony-archives@worldweb</a>
+                </address>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-uppercase small text-secondary mb-2">Hegemony</div>
+                <ul class="list-unstyled mb-0">
+                    <li><a class="link-light text-decoration-none" href="#">All Thing Dispatches</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">WorldWeb Relays</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Research Permits</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Chrono-Weather</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-uppercase small text-secondary mb-2">Pilgrimage</div>
+                <ul class="list-unstyled mb-0">
+                    <li><a class="link-light text-decoration-none" href="#">Eligibility & Lots</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Shrike Church Notices</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Safety Advisory</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Field Guides</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-uppercase small text-secondary mb-2">Archives</div>
+                <ul class="list-unstyled mb-0">
+                    <li><a class="link-light text-decoration-none" href="#">Time Tombs Studies</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Pilgrim Narratives</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Cantos References</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Media & Maps</a></li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-3">
+                <div class="text-uppercase small text-secondary mb-2">All Thing Updates</div>
+                <form action="#" method="post" class="mt-2">
+                    <label for="footer-newsletter" class="visually-hidden">Comms address</label>
+                    <div class="input-group">
+                        <input id="footer-newsletter" name="email" type="email" class="form-control"
+                               placeholder="your@relay.worldweb" required>
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                    <p class="small text-secondary mt-2 mb-0">
+                        Fictional fan site. Not affiliated with Dan Simmons or rights holders.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <hr class="border-secondary my-4">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div class="small text-secondary">© 2025 Hegemony Archives (Fan). All lore terms belong to their respective
+                owners.
+            </div>
+            <ul class="nav small">
+                <li class="nav-item"><a class="nav-link px-2 text-secondary" href="#">Privacy</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-secondary" href="#">Terms</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-secondary" href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+</body>
+</html>

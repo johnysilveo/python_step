@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kaushan+Script&family=Playball&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700;6..96,900&family=Cinzel:wght@700;900&display=swap"
+          rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hyperion daily bugle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="main.html">
+            <img src="hyperion_logo.svg" alt="Hyperion Daily Bugle" style="height:35px; width:auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Contacts</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="null_portal.html" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        null_portals
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="null_portal.html">About null_portal</a></li>
+                        <li><a class="dropdown-item" href="order_form.html">Custom null_portal</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Claim Department</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-xxl my-5">
+    <div class="row g-4 align-items-stretch">
+
+        <!-- LEFT COLUMN -->
+        <div class="col-lg-4 d-flex flex-column gap-4">
+            <!-- Main text -->
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="h3 mb-2">Null-Portal Installation</h2>
+                    <p class="text-secondary mb-3">
+                        Open rooms, not wormholes. We mount, seal, and calibrate your
+                        <em>null-portal</em> so it behaves like a polite doorway—no suction,
+                        no paradox drafts, zero shimmer at idle.
+                    </p>
+                    <ul class="small text-secondary mb-0">
+                        <li>Farcaster-safe frame with chrono-dampers</li>
+                        <li>Multi-phase alignment (≤ 2µs drift)</li>
+                        <li>Child-lock & biometric handoff</li>
+                        <li>12-month chrono-stability warranty</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Site design add-on -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="fw-bold mb-1">Request custom frame</div>
+                    <div class="small text-secondary">
+                        We blend the portal into your interior—panels, lighting, and safety markings—
+                        so it looks native, discreet, and premium. Your choice of materials. <i>Let your self go wild
+                        there is nothing we can't do!</i>
+                        <a href="order_form.html" class="btn btn-primary btn-sm">Place Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="col-lg-8">
+            <div class="row g-4">
+                <!-- Get a quote -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body d-flex flex-wrap align-items-center gap-3">
+                            <div>
+                                <div class="fw-bold">Get a quote</div>
+                                <div class="small text-secondary">Install, calibration & warranty in one package.</div>
+                            </div>
+                            <form class="ms-auto d-flex flex-wrap gap-2">
+                                <input class="form-control form-control-sm" type="email"
+                                       placeholder="you@relay.worldweb" required>
+                                <input class="form-control form-control-sm" type="text" placeholder="Planet / City"
+                                       required>
+                                <button class="btn btn-primary btn-sm" type="submit">Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Big vertical picture -->
+                <div class="col-12">
+                    <div class="card">
+                        <img src="./null1.jpeg" alt="Null-portal installation mock" class="card-img-top"
+                             style="width:200; aspect-ratio:9/16; object-fit:cover; display:block;">
+                        <!-- adjust path -->
+                        <div class="card-body small text-secondary">
+                            Render: wall-flush frame with safety LEDs and phase-quiet louvers.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+<!-- Hyperion-themed footer (fictional, Bootstrap) -->
+<div class="bg-dark text-light mt-5">
+    <div class="container py-5">
+        <div class="row g-4">
+            <!-- Brand -->
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="fw-bold fs-5">All Thing • Hegemony Archives</div>
+                <p class="text-secondary small mb-3">
+                    Unofficial fan portal on the Hyperion saga: Time Tombs briefs, pilgrim notices, and archive
+                    excerpts.
+                </p>
+                <address class="small text-secondary mb-0">
+                    Tau Ceti Center, Sector 7<br>
+                    WorldWeb Relay: <span class="text-light">0x-SHRIKE</span><br>
+                    <a class="link-light text-decoration-none" href="#">hegemony-archives@worldweb</a>
+                </address>
+            </div>
+
+            <!-- Hegemony -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-uppercase small text-secondary mb-2">Hegemony</div>
+                <ul class="list-unstyled mb-0">
+                    <li><a class="link-light text-decoration-none" href="#">All Thing Dispatches</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">WorldWeb Relays</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Research Permits</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Chrono-Weather</a></li>
+                </ul>
+            </div>
+
+            <!-- Pilgrimage -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-uppercase small text-secondary mb-2">Pilgrimage</div>
+                <ul class="list-unstyled mb-0">
+                    <li><a class="link-light text-decoration-none" href="#">Eligibility & Lots</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Shrike Church Notices</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Safety Advisory</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Field Guides</a></li>
+                </ul>
+            </div>
+
+            <!-- Archives -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-uppercase small text-secondary mb-2">Archives</div>
+                <ul class="list-unstyled mb-0">
+                    <li><a class="link-light text-decoration-none" href="#">Time Tombs Studies</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Pilgrim Narratives</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Cantos References</a></li>
+                    <li><a class="link-light text-decoration-none" href="#">Media & Maps</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-12 col-md-8 col-lg-3">
+                <div class="text-uppercase small text-secondary mb-2">All Thing Updates</div>
+                <form action="#" method="post" class="mt-2">
+                    <label for="footer-newsletter" class="visually-hidden">Comms address</label>
+                    <div class="input-group">
+                        <input id="footer-newsletter" name="email" type="email" class="form-control"
+                               placeholder="your@relay.worldweb" required>
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                    <p class="small text-secondary mt-2 mb-0">
+                        Fictional fan site. Not affiliated with Dan Simmons or rights holders.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <hr class="border-secondary my-4">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div class="small text-secondary">© 2025 Hegemony Archives (Fan). All lore terms belong to their respective
+                owners.
+            </div>
+            <ul class="nav small">
+                <li class="nav-item"><a class="nav-link px-2 text-secondary" href="#">Privacy</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-secondary" href="#">Terms</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-secondary" href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
